@@ -41,6 +41,7 @@ const userSlice = createSlice({
           },
         removeUser:(state,action:PayloadAction<{_id:string}>)=>{
             state.users = state.users.filter((user:any)=>user._id !==action.payload._id)
+            state.total -=1
         }
     },
     extraReducers:(builder)=>{
